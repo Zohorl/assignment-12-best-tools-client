@@ -1,12 +1,13 @@
-import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useEffect } from 'react';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
 
-    // const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
         user,
@@ -14,28 +15,28 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    // reset password
-    // const [updatePassword, updating] = useUpdatePassword(auth);
+
 
     // const [token] = useToken(user || gUser);
 
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
-    // useEffect(() => {
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [token, from, navigate]);
+    useEffect(() => {
+        // tooken pele user and gUser er jaigai token hobe...r dependency teo token hobe
+        if (user || gUser) {
+            navigate(from, { replace: true });
+        }
+    }, [user || gUser, from, navigate]);
 
-    // if (loading || gLoading || updating) {
-    //     return <Loading></Loading>
-    // }
-    // let signInError;
-    // if (error || gError) {
-    //     signInError = <p className='text-red-600'><small>{error?.message || gError?.message}</small></p>
-    // }
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+    let signInError;
+    if (error || gError) {
+        signInError = <p className='text-red-600'><small>{error?.message || gError?.message}</small></p>
+    }
 
     const onSubmit = data => {
         // console.log(data);
@@ -102,17 +103,17 @@ const Login = () => {
 
                             </label>
                         </div>
-                        {/* {signInError} */}
+                        {signInError}
                         <input type="submit" value="LOGIN" className="btn w-full max-w-xs text-white" />
                     </form>
                     <p><small>New to Doctors Portal ? <Link className='text-secondary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
 
-                    {/* <button
+                    <button
                         onClick={() => signInWithGoogle()}
                         className="btn btn-outline uppercase"
                     >Continue With Google
-                    </button> */}
+                    </button>
                 </div>
             </div>
         </div>

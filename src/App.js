@@ -7,6 +7,7 @@ import Purchase from './pages/Purchase/Purchase';
 // Toast
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Login from './pages/Login/Login';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/purchase' element={<Purchase></Purchase>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
       <ToastContainer />
     </div>
