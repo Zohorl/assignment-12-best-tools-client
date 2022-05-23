@@ -106,7 +106,7 @@ const Login = () => {
                         {signInError}
                         <input type="submit" value="LOGIN" className="btn w-full max-w-xs text-white" />
                     </form>
-                    <p><small>New to Doctors Portal ? <Link className='text-secondary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New to Best Tool ? <Link className='text-secondary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
 
                     <button
