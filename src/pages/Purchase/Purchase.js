@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Purschase = () => {
+const Purchase = () => {
     return (
         <div>
             <h2 className='text-center'>Purchese Here</h2>
@@ -8,4 +8,4 @@ const Purschase = () => {
     );
 };
 
-export default Purschase;
+export default Purchase;
