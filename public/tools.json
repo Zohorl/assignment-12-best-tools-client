@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "image": "https://i.ibb.co/L016ZFG/tool-1.jpg",
+        "price": "980",
+        "availableQuantity": "200",
+        "minimumQuantity": "20",
+        "name": "DeWalt DWV010",
+        "description": "The DWV010 8 Gallon HEPA Dust Extractor with Automatic Filter Cleaning features a 15 Amp Motor, delivering 155 CFM of airflow. The Automatic Filter Clean"
+    },
+    {
+        "_id": 2,
+        "image": "https://i.ibb.co/GkYYgGX/tool-2.jpg",
+        "price": "510",
+        "availableQuantity": "200",
+        "minimumQuantity": "15",
+        "name": "DEWALT Honda GX270",
+        "description": "The 269cc Honda® GX270 engine drives powerful operation for the 4000 PSI 3.5 GPM Cold Water Gas Pressure Washer. It features a triplex pump."
+    },
+    {
+        "_id": 3,
+        "image": "https://i.ibb.co/8KvLYGc/tool-3.jpg",
+        "price": "700",
+        "availableQuantity": "200",
+        "minimumQuantity": "20",
+        "name": "Decker BDCDMT1206KITC",
+        "description": "The Black & Decker BDCDMT1206KITC Matrix 6 Tool Combo Kit is an all in one kit to tackle most jobs around the house. The 20-volt MAX Motor provides enough"
+    },
+    {
+        "_id": 4,
+        "image": "https://i.ibb.co/gJB91DW/tool-4.jpg",
+        "price": "100",
+        "availableQuantity": "200",
+        "minimumQuantity": "70",
+        "name": "Beam Line Laser",
+        "description": "The 3 Beam Line Laser Level aids in 90-degree layout. Laser levels for construction feature 2 times brighter diode to increase visibility in bright job site"
+    },
+    {
+        "_id": 5,
+        "image": "https://i.ibb.co/c37V09B/tool-5.jpg",
+        "price": "150",
+        "availableQuantity": "200",
+        "minimumQuantity": "30",
+        "name": "Lithium Ion Trimer",
+        "description": "Hape Walk-A-Long Snail Toy the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment"
+    },
+    {
+        "_id": 6,
+        "image": "https://i.ibb.co/86Kj9dG/tool-6.jpg",
+        "price": "250",
+        "availableQuantity": "200",
+        "minimumQuantity": "20",
+        "name": "Ryobi Petrol Blower",
+        "description": "The Ryobi RBV-26 Petrol 2 stroke Blower Vac 26cc is light and compact with vacuum capabilities. The high performance blower also has a mulching vacuum with "
+    }
+]
