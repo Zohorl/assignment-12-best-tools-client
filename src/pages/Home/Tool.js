@@ -1,13 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import SharedButton from '../Shared/SharedButton';
+
 
 const Tool = ({ tool }) => {
     console.log(tool)
     const { _id, image, name, price, description } = tool;
     const navigate = useNavigate();
 
-
+    const navigateToPurchase = id => {
+        navigate(`/purchase/${id}`);
+    };
 
 
     return (
@@ -17,8 +19,8 @@ const Tool = ({ tool }) => {
                 <h2 className="card-title">{name}</h2>
                 <h4 className='text-xl'>Price : ${price}</h4>
                 <p>{description}</p>
-                <div className="card-actions justify-center">
-                    <SharedButton>Book Now</SharedButton>
+                <div className="card-actions justify-center mt-3">
+                    <button onClick={() => navigateToPurchase(_id)} class="btn bg-gradient-to-r from-secondary to-primary border-none uppercase text-white">Book Now</button>
                 </div>
             </div>
         </div>
