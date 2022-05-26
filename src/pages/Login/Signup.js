@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const Signup = () => {
@@ -15,30 +16,30 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    const [sendEmailVerification, sending, verifyError] = useSendEmailVerification(auth);
+    // const [sendEmailVerification, sending, verifyError] = useSendEmailVerification(auth);
     const [updateProfile, updating, userError] = useUpdateProfile(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    // const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
 
     const navigate = useNavigate();
 
-    if (loading || gLoading || updating || sending) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
     let signInError;
-    if (error || gError || userError || verifyError) {
+    if (error || gError || userError) {
         signInError = <p className='text-red-600'><small>{error?.message || gError?.message}</small></p>
     }
-    // token pele user and gUser er jaigai token hobe...
-    if (user || gUser) {
-        navigate('/purchase');
+
+    if (token) {
+        navigate('/purchase/:id');
     }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-        await sendEmailVerification();
-        toast('Verify Email');
+        // await sendEmailVerification();
+        // toast('Verify Email');
     };
 
     return (
