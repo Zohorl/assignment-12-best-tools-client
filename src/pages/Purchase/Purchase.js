@@ -11,7 +11,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`https://hidden-basin-21875.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, []);
@@ -27,7 +27,7 @@ const Purchase = () => {
         if (userQuantity && userQuantity > 0) {
             const newQuantity = parseInt(quantity) + parseInt(userQuantity);
             const setQuantity = { newQuantity }
-            const url = `http://localhost:5000/tool/${id}`;
+            const url = `https://hidden-basin-21875.herokuapp.com/tool/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

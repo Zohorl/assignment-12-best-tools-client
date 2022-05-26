@@ -8,7 +8,7 @@ const AddReview = () => {
     const [review, setReview] = useState([]);
     // console.log(review)
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://hidden-basin-21875.herokuapp.com/review')
             .then(res => res.json())
             .then(data => setReview(data))
     }, []);

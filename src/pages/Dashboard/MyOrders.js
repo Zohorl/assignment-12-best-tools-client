@@ -7,7 +7,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are You Sure ?');
         if (proceed) {
-            const url = `http://localhost:5000/tool/${id}`;
+            const url = `https://hidden-basin-21875.herokuapp.com/tool/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
